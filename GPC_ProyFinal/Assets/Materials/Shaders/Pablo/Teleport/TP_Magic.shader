@@ -7,20 +7,20 @@ Shader "Custom/TP_Magic"
         _LineWidth  ("Line Width", Range(0.001, 0.2)) = 0.02
 
         //Nivel 1
-        _SquareSize1 ("Square Half Size", Range(0.1, 1.0)) = 0.146
+        _SquareSize1 ("Square Half Size 1", Range(0.1, 1.0)) = 0.146
         _Radius1    ("Circle Radius 1", Range(0.05, 1.0)) = 0.214
 
         //Nivel 2
-        _SquareSize2  ("Square Half Size", Range(0.1, 1.0)) = 0.26
+        _SquareSize2  ("Square Half Size 2", Range(0.1, 1.0)) = 0.26
         _Radius2    ("Circle Radius 2", Range(0.05, 1.0)) = 0.377
 
         //Nivel 3
-        _SquareSize3 ("Square Half Size", Range(0.1, 1.0)) = 0.43
-        _Radius3    ("Circle Radius 1", Range(0.05, 1.0)) = 0.618
+        _SquareSize3 ("Square Half Size 3", Range(0.1, 1.0)) = 0.43
+        _Radius3    ("Circle Radius 3", Range(0.05, 1.0)) = 0.618
 
         //Nivel 4
-        _SquareSize4  ("Square Half Size", Range(0.1, 1.0)) = 0.666
-        _Radius4    ("Circle Radius 2", Range(0.05, 1.0)) = 0.95
+        _SquareSize4  ("Square Half Size 4", Range(0.1, 1.0)) = 0.666
+        _Radius4    ("Circle Radius 4", Range(0.05, 1.0)) = 0.95
 
         //Animacion
         _RotationSpeedRight ("Rotation Speed RIght (rad/s)", Float) = 2.5
@@ -32,8 +32,13 @@ Shader "Custom/TP_Magic"
         _GrowTime3 ("Grow Time Level 3 (seconds)", Float) = 1.0
         _GrowTime4 ("Grow Time Level 4 (seconds)", Float) = 1.0
 
-        //Cambio Final
+        //Tiempo que dura el fade hasta color final
         _BlueDelay ("Extra Time Before Blue (s)", Float) = 0.5
+
+        //Emision + luz
+        _EmissiveIntensity ("Emissive Intensity", Float) = 1.0
+        _BlueEmissiveBoost ("Blue Emissive Boost", Float) = 2.0
+        _LightStrength ("Light Strength", Float) = 1.0
     }
 
     SubShader
@@ -62,6 +67,7 @@ Shader "Custom/TP_Magic"
             #pragma fragment frag
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 
             CBUFFER_START(UnityPerMaterial)
                 float4 _LineColor;
@@ -86,6 +92,10 @@ Shader "Custom/TP_Magic"
                 float  _GrowTime4;
 
                 float  _BlueDelay;
+
+                float _EmissiveIntensity;
+                float _BlueEmissiveBoost;
+                float _LightStrength;
             CBUFFER_END
 
             struct Attributes
@@ -213,11 +223,36 @@ Shader "Custom/TP_Magic"
                 //Mezcla entre color original y azul
                 float4 currentLineColor = lerp(_LineColor, _FinalColor, blueStep);
 
+                // --- EMISION ---
+                float3 baseColor = currentLineColor.rgb;
+
+                //Emision: sube cuando el hechizo esta en el color final
+                float emissiveIntensity = lerp(_EmissiveIntensity, _EmissiveIntensity * _BlueEmissiveBoost, blueStep);
+
+                float3 emissive = baseColor * emissiveIntensity;
+
+                // --- LUZ DIRECCIONAL (N * L simple) ---
+                Light mainLight = GetMainLight();
+
+                // Normal fija del portal (plano mirando hacia -Z)
+                float3 N = float3(0, 0, -1);
+                float3 L = normalize(mainLight.direction);
+                
+                float3 ndotl = saturate(dot(N, -L));
+
+                //Factor de luz: color de la luz * N*L * intensidad
+                float3 lightFactor = mainLight.color * ndotl * _LightStrength;
+
+                //Parte iluminada (color del portal)
+                float3 lit = baseColor * lightFactor;
+
+                // --- COLOR FINAL ---
+                float3 finalRgb = emissive + lit;
+
                 //Color final: solo lineas, fondo transparente
                 float4 col;
-                col.rgb = currentLineColor.rgb;
+                col.rgb = finalRgb;
                 col.a   = lineMask * currentLineColor.a;
-
                 return col;
             }
 
