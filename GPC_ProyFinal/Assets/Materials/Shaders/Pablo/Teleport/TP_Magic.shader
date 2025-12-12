@@ -7,20 +7,20 @@ Shader "Custom/TP_Magic"
         _LineWidth  ("Line Width", Range(0.001, 0.2)) = 0.02
 
         //Nivel 1
-        _SquareSize1 ("Square Half Size 1", Range(0.1, 1.0)) = 0.146
-        _Radius1    ("Circle Radius 1", Range(0.05, 1.0)) = 0.214
+        _SquareSize1 ("Square Half Size 1", Range(0.1, 1.0)) = 0.14
+        _Radius1    ("Circle Radius 1", Range(0.05, 1.0)) = 0.2
 
         //Nivel 2
-        _SquareSize2  ("Square Half Size 2", Range(0.1, 1.0)) = 0.26
-        _Radius2    ("Circle Radius 2", Range(0.05, 1.0)) = 0.377
+        _SquareSize2  ("Square Half Size 2", Range(0.1, 1.0)) = 0.25
+        _Radius2    ("Circle Radius 2", Range(0.05, 1.0)) = 0.36
 
         //Nivel 3
-        _SquareSize3 ("Square Half Size 3", Range(0.1, 1.0)) = 0.43
-        _Radius3    ("Circle Radius 3", Range(0.05, 1.0)) = 0.618
+        _SquareSize3 ("Square Half Size 3", Range(0.1, 1.0)) = 0.408
+        _Radius3    ("Circle Radius 3", Range(0.05, 1.0)) = 0.58
 
         //Nivel 4
-        _SquareSize4  ("Square Half Size 4", Range(0.1, 1.0)) = 0.666
-        _Radius4    ("Circle Radius 4", Range(0.05, 1.0)) = 0.95
+        _SquareSize4  ("Square Half Size 4", Range(0.1, 1.0)) = 0.63
+        _Radius4    ("Circle Radius 4", Range(0.05, 1.0)) = 0.9
 
         //Animacion
         _RotationSpeedRight ("Rotation Speed RIght (rad/s)", Float) = 2.5

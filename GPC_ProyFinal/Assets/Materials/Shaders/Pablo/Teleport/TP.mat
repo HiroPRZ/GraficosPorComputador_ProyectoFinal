@@ -53,18 +53,18 @@ Material:
     - _NoiseScale: 6
     - _NoiseSpeed: 1
     - _Radius: 0.4
-    - _Radius1: 0.214
-    - _Radius2: 0.377
-    - _Radius3: 0.618
-    - _Radius4: 0.95
+    - _Radius1: 0.2
+    - _Radius2: 0.36
+    - _Radius3: 0.58
+    - _Radius4: 0.9
     - _RotationSpeed: 0.5
     - _RotationSpeedLeft: -2.5
     - _RotationSpeedRight: 2.5
     - _SquareSize: 0.25
-    - _SquareSize1: 0.146
-    - _SquareSize2: 0.26
-    - _SquareSize3: 0.43
-    - _SquareSize4: 0.666
+    - _SquareSize1: 0.14
+    - _SquareSize2: 0.25
+    - _SquareSize3: 0.408
+    - _SquareSize4: 0.63
     m_Colors:
     - _BGColor: {r: 0, g: 0, b: 0, a: 1}
     - _BlueColor: {r: 0, g: 0.5, b: 1, a: 1}
