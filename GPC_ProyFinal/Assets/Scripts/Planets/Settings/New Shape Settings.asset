@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Shape Settings
   m_EditorClassIdentifier: Assembly-CSharp::ShapeSettings
   planetRadius: 770
+<<<<<<< HEAD
   noiseLayers:
   - enabled: 1
     useFirstLayerAsMask: 0
@@ -50,3 +51,5 @@ MonoBehaviour:
       centre: {x: 0, y: 0, z: 0}
       minValue: 0
       weightMultiplier: 0.8
+=======
+>>>>>>> parent of d30f531 (Detalles planeta)
