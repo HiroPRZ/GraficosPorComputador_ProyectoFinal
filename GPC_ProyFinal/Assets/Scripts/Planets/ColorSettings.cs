@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class ColorSettings : ScriptableObject
 {
+<<<<<<< HEAD
+=======
+    public Color planetColor;
+>>>>>>> parent of 64d761c (Gradiente de colores de planeta)
     public Material planetMaterial;
     public BiomeColorSettings biomeColorSettings;
 

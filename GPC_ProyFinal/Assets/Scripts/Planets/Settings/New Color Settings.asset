@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0fea1139c61e74aad7ee8ca409f749, type: 3}
   m_Name: New Color Settings
   m_EditorClassIdentifier: Assembly-CSharp::ColorSettings
+<<<<<<< HEAD
   planetMaterial: {fileID: 2100000, guid: cdef3c8a44ab655439495b51233332a2, type: 2}
   biomeColorSettings:
     biomes:
@@ -114,3 +115,7 @@ MonoBehaviour:
       tint: {r: 0, g: 1, b: 0, a: 0}
       startHeight: 1
       tintPercent: 0.299
+=======
+  planetColor: {r: 0.26709995, g: 0.59607846, b: 0.16470586, a: 0}
+  planetMaterial: {fileID: 2100000, guid: fab5ba8039b27174685d6e4cca310661, type: 2}
+>>>>>>> parent of 64d761c (Gradiente de colores de planeta)

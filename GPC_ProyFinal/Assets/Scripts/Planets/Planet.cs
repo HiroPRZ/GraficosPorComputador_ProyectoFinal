@@ -14,8 +14,7 @@ public class Planet : MonoBehaviour
     [HideInInspector] public bool shapeSettingsFold;
     [HideInInspector] public bool colorSettingsFold;
 
-    ShapeGenerator shapeGenerator = new ShapeGenerator();
-    ColorGenerator colorGenerator = new ColorGenerator();
+    ShapeGenerator shapeGenerator;
 
     [SerializeField, HideInInspector]
     MeshFilter[] meshFilters;
@@ -23,8 +22,7 @@ public class Planet : MonoBehaviour
 
     void Initialize()
     {
-        shapeGenerator.UpdateSettings(shapeSettings);
-        colorGenerator.UpdateSettings(colorSettings);
+        shapeGenerator = new ShapeGenerator(shapeSettings);
 
         if (meshFilters == null || meshFilters.Length == 0)
             meshFilters = new MeshFilter[6];
@@ -85,12 +83,11 @@ public class Planet : MonoBehaviour
                 terrainFaces[i].ConstructMesh();
             }
         }
-
-        colorGenerator.UpdateElevation(shapeGenerator.elevationMinMax);
     }
 
     void GenerateColors()
     {
+<<<<<<< HEAD
         colorGenerator.UpdateColors();
         for (int i = 0; i < 6; i++)
         {
@@ -98,6 +95,11 @@ public class Planet : MonoBehaviour
             {
                 terrainFaces[i].UpdateUVs(colorGenerator);
             }
+=======
+        foreach (MeshFilter m in meshFilters)
+        {
+            m.GetComponent<MeshRenderer>().sharedMaterial.color = colorSettings.planetColor;
+>>>>>>> parent of 64d761c (Gradiente de colores de planeta)
         }
     }
 }
