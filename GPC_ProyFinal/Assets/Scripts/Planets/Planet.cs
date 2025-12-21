@@ -7,6 +7,7 @@ public class Planet : MonoBehaviour
     public bool autoUpdate = true;
     public enum FaceRenderMask { All, Top, Bottom, Left, Right, Front, Back };
     public FaceRenderMask faceRenderMask = FaceRenderMask.All;
+    public float rotationSpeed = 1;
 
     public ShapeSettings shapeSettings;
     public ColorSettings colorSettings;
@@ -20,6 +21,17 @@ public class Planet : MonoBehaviour
     [SerializeField, HideInInspector]
     MeshFilter[] meshFilters;
     TerrainFace[] terrainFaces;
+
+    void Start()
+    {
+        resolution = 246;
+        GeneratePlanet();
+    }
+
+    void Update()
+    {
+        transform.Rotate(Vector3.up * Time.deltaTime * -rotationSpeed);
+    }
 
     void Initialize()
     {

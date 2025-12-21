@@ -23,8 +23,8 @@ MonoBehaviour:
       baseRoughness: 1.15
       roughness: 2.27
       persistence: 0.5
-      centre: {x: 1.74, y: 0, z: 0}
-      minValue: 0.9
+      centre: {x: 1.74, y: 15.9, z: 0}
+      minValue: 0.83
       weightMultiplier: 0
   - enabled: 1
     useFirstLayerAsMask: 1
