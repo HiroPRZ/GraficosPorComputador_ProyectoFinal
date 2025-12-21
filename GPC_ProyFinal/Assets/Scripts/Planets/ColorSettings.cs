@@ -5,4 +5,5 @@ public class ColorSettings : ScriptableObject
 {
     public Gradient gradient;
     public Material planetMaterial;
+    public Gradient oceanColor;
 }

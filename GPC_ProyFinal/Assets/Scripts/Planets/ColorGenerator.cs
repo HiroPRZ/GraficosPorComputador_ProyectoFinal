@@ -10,7 +10,7 @@ public class ColorGenerator
     {
         this.settings = settings;
         if (texture == null)
-            texture = new Texture2D(textureResolution, 1);
+            texture = new Texture2D(textureResolution * 2, 1);
     }
 
     public void UpdateElevation(MinMax elevationMinMax)
@@ -20,11 +20,17 @@ public class ColorGenerator
 
     public void UpdateColors()
     {
-        Color[] colors = new Color[textureResolution];
+        Color[] colors = new Color[texture.width * texture.height];
 
-        for (int i = 0; i < colors.Length; i++)
+        for (int i = 0; i < textureResolution * 2; i++)
         {
-            colors[i] = settings.gradient.Evaluate(i / (textureResolution - 1f));
+            Color gradientCol;
+            if (i < textureResolution)
+                gradientCol = settings.oceanColor.Evaluate(i / (textureResolution - 1f));
+            else
+                gradientCol = settings.gradient.Evaluate((i - textureResolution) / (textureResolution - 1f));
+
+            colors[i] = gradientCol;
         }
         texture.SetPixels(colors);
         texture.Apply();

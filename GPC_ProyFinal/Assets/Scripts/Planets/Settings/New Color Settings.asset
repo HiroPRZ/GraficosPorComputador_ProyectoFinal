@@ -14,20 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorSettings
   gradient:
     serializedVersion: 2
-    key0: {r: 0.33107865, g: 0.5071752, b: 0.754717, a: 1}
-    key1: {r: 0.7529412, g: 0.6453807, b: 0.32941177, a: 1}
-    key2: {r: 0.32941177, g: 0.7529412, b: 0.3715177, a: 0}
-    key3: {r: 0.2214756, g: 0.5943396, b: 0.38000527, a: 0}
-    key4: {r: 0.7529412, g: 0.4576119, b: 0.32941177, a: 0}
-    key5: {r: 1, g: 1, b: 1, a: 0}
+    key0: {r: 0.7529412, g: 0.6453807, b: 0.32941177, a: 1}
+    key1: {r: 0.32941177, g: 0.7529412, b: 0.3715177, a: 1}
+    key2: {r: 0.2214756, g: 0.5943396, b: 0.38000527, a: 0}
+    key3: {r: 0.7529412, g: 0.4576119, b: 0.32941177, a: 0}
+    key4: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
+    key5: {r: 0.46274513, g: 0.46274513, b: 0.46274513, a: 0}
+    key6: {r: 1, g: 1, b: 1, a: 0}
+    key7: {r: 1, g: 1, b: 1, a: 0}
+    ctime0: 964
+    ctime1: 6361
+    ctime2: 22166
+    ctime3: 26985
+    ctime4: 44525
+    ctime5: 56283
+    ctime6: 65535
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 2
+    m_ColorSpace: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  planetMaterial: {fileID: 2100000, guid: cdef3c8a44ab655439495b51233332a2, type: 2}
+  oceanColor:
+    serializedVersion: 2
+    key0: {r: 0.10857955, g: 0.14655922, b: 0.3773585, a: 1}
+    key1: {r: 0.21444464, g: 0.26847926, b: 0.5754717, a: 1}
+    key2: {r: 0.31038624, g: 0.47643086, b: 0.7075472, a: 0}
+    key3: {r: 0, g: 0.67209864, b: 1, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 2313
-    ctime2: 9252
-    ctime3: 22166
-    ctime4: 45104
-    ctime5: 65535
+    ctime0: 21010
+    ctime1: 46453
+    ctime2: 59367
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
@@ -40,6 +71,5 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 2
     m_ColorSpace: 0
-    m_NumColorKeys: 6
+    m_NumColorKeys: 4
     m_NumAlphaKeys: 2
-  planetMaterial: {fileID: 2100000, guid: cdef3c8a44ab655439495b51233332a2, type: 2}
