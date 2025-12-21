@@ -26,8 +26,6 @@ public class TerrainFace
         int triIndex = 0;
         Vector2[] uv = mesh.uv;
 
-        if (mesh.uv.Length != uv.Length) return;
-
         for (int y = 0; y < resolution; y++)
         {
             for (int x = 0; x < resolution; x++)
