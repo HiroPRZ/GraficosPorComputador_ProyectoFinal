@@ -65,6 +65,53 @@ Hechizo del anime **Sousou no Frieren** y cómo lo usan:
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6fbb7129-b32c-46a9-8de7-fc052de921ad" alt="PabloRodriguezZuriaga_GPC_ProyectoFinal" width="700" />
 </p>
+
 ---
 
 ### ✨ Timothy Henry de Frias Macwhinnie — ¿?
+
+#### 💡 Idea
+
+El objetivo de este proyecto es crear una escena espacial en Unity mediante el uso combinado de código y los shader graphs del Universal Render Pipeline de Unity.
+
+#### 🎞️ Referencias
+
+He creado este esbozo en Adobe Photoshop para plantear la composición de la escena y averiguar que trabajo se necesitará realizar:
+
+<p align="center">
+  <img src = "https://github.com/user-attachments/assets/9b039cc1-0a9f-4f9c-a2a6-e6b4c1ded20b"/>
+</p>
+
+---
+
+#### 🛠️ Proceso de Implementación
+Para realizar este proyecto era necesario crear dos sistemas:
+1. Un shader de sol. Y, lo más ambicioso:
+2. Una sistema de generar planetas de manera procedural
+
+##### 🧱 Sistema compuesto por:
+1. **Planet** Un script MonoBehaviour que llama a varias otras para generar la geometría y colores de la planeta.
+2. **PlanetShader** Un shader que asigna colores de dos gradientes a la textura de la planeta para mostrar diferenciar los oceanos con masas de tierra.
+3. **SunShader** Un shader que utiliza ruido voronoi para simular la superficie de un sol.
+
+##### 📌 Orden de Implementación
+**Planeta**
+1. Para evitar que la geometría de la planeta se desforma a los polos, había que generar una esféra que no tenía polos en su topología. El script de ShapeGenerator genera 6 planos al que se apliquen subdivisiones normalizadas para generar una esfera.
+2. Para crear tierra y montañas se crean capas de ruido que cambian la altura de los vertices de la malla.
+3. El script de ColorGenerator utiliza dos gradientes para crear los colores del oceano y la tierra. Que color se aplica a las texturas se basa en la altura de los vertices de la malla.
+
+#### ✅ Resultado Final Planeta
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f6cf6ef-9521-46c2-a7d3-58a87c2a6db9">
+</p>
+
+---
+
+**Sol**
+Mucísimo más simple que la planeta, el sol consiste en un shader que aplica un ruido voronoi al variable de emisión del material. A este ruido se le aplica un deformación y tiempo para crear movimiento y dos colores que ayudan a resaltar el efecto.
+<p align="center">
+  <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/f118bb29-aa25-4db5-b701-fbb042640b03" />
+</p>
+
+#### ✅ Resultado Final Completo
+https://github.com/user-attachments/assets/bf739a05-5922-4328-bfe9-0147838ceac7
