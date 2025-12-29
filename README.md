@@ -68,19 +68,21 @@ Hechizo del anime **Sousou no Frieren** y cómo lo usan:
 
 ---
 
-### ✨ Timothy Henry de Frias Macwhinnie — ¿?
+### ✨ Timothy Henry de Frias Macwhinnie — Escena Extraterrestre
 
 #### 💡 Idea
 
 El objetivo de este proyecto es crear una escena espacial en Unity mediante el uso combinado de código y los shader graphs del Universal Render Pipeline de Unity.
 
-#### 🎞️ Referencias
+#### 🎞️ Inspiraciones / Referencias
 
 He creado este esbozo en Adobe Photoshop para plantear la composición de la escena y averiguar que trabajo se necesitará realizar:
 
 <p align="center">
   <img src = "https://github.com/user-attachments/assets/9b039cc1-0a9f-4f9c-a2a6-e6b4c1ded20b"/>
 </p>
+
+Este canal de YouTube ha servido cómo un buen recurso de apoyo para el desarrollo de este proyecto: [https://www.youtube.com/@SebastianLague](url)
 
 ---
 
